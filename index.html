@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Meu Amor 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 80px;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      margin: auto;
+      width: 60%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #final {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="container">
+    <h1>Oi, meu amor! 💕</h1>
+    <p>Quero te fazer algumas perguntinhas rápidas...</p>
+    <button onclick="pergunta1()">Vamos lá!</button>
+  </div>
+
+  <script>
+    function pergunta1() {
+      const nome = prompt("Qual seu nome linda?");
+      if (!nome) return;
+      document.getElementById('container').innerHTML = \`
+        <h2>😍 Que nome lindo, \${nome}!</h2>
+        <p>Agora me diz... você gosta de surpresas?</p>
+        <button onclick="pergunta2('\${nome}')">Sim, claro!</button>
+      \`;
+    }
+
+    function pergunta2(nome) {
+      document.getElementById('container').innerHTML = \`
+        <h2>🥰 Eu sabia!</h2>
+        <p>Então segura essa última pergunta, \${nome}...</p>
+        <button onclick="mostrarMensagem()">Pode mandar!</button>
+      \`;
+    }
+
+    function mostrarMensagem() {
+      document.getElementById('container').innerHTML = \`
+        <h2 id="final">Você é o amor da minha vida! 💘</h2>
+        <p>Obrigado por existir, por me fazer sorrir, por ser exatamente quem você é.</p>
+        <p>Te amo mais do que palavras podem dizer. 💖</p>
+      \`;
+    }
+  </script>
+</body>
+</html>
